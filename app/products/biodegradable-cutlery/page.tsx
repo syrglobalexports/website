@@ -5,12 +5,23 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { PRODUCTS } from "@/data/products";
 import { EnquiryForm } from "@/components/sections/EnquiryForm";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
+import { BreadcrumbJsonLd, ProductJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title:
-    "Biodegradable Cutlery Set Made from Sugarcane Bagasse | SYR Global Exports",
+  title: "Biodegradable Cutlery Set Made from Sugarcane Bagasse | SYR Global Exports",
   description:
     "Export-grade Biodegradable Cutlery Set Made from Sugarcane Bagasse. 100% plant fiber pulp utensils offering high rigidity, thermal stability, and natural compostability.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/products/biodegradable-cutlery",
+  },
+  openGraph: {
+    title: "Biodegradable Cutlery Set Made from Sugarcane Bagasse | SYR Global Exports",
+    description:
+      "Export-grade Biodegradable Cutlery Set Made from Sugarcane Bagasse. 100% plant fiber pulp utensils offering high rigidity and compostability.",
+    url: "https://syrglobalexport.com/products/biodegradable-cutlery",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "Sugarcane Bagasse Cutlery" }],
+  },
 };
 
 export default function BiodegradableCutleryPage() {
@@ -18,6 +29,21 @@ export default function BiodegradableCutleryPage() {
 
   return (
     <main className="w-full bg-slate-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" },
+          { name: "Biodegradable Cutlery", url: "/products/biodegradable-cutlery" },
+        ]}
+      />
+      <ProductJsonLd
+        name="Biodegradable Cutlery Set Made from Sugarcane Bagasse"
+        description="Export-grade Biodegradable Cutlery Set Made from Sugarcane Bagasse. 100% plant fiber pulp utensils."
+        image={product.image}
+        sku="SYR-CUT-BAGASSE"
+        url="/products/biodegradable-cutlery"
+        category="Biodegradable Tableware"
+      />
       {/* Breadcrumb & Hero */}
       <section className="bg-gradient-to-r from-[#001337] via-[#0F2854] to-[#0A1C3B] text-white py-8 lg:py-12 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

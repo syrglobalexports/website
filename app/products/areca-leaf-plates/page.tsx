@@ -5,11 +5,23 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { PRODUCTS } from "@/data/products";
 import { EnquiryForm } from "@/components/sections/EnquiryForm";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
+import { BreadcrumbJsonLd, ProductJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Round Areca Leaf Plates — 8, 10 & 12 Inch | SYR Global Exports",
+  title: "Round Areca Leaf Plates (8, 10 & 12 Inch) | SYR Global Exports",
   description:
     "100% natural, chemical-free Round Areca Leaf Plates available strictly in 8 inch, 10 inch, and 12 inch sizes for commercial catering and zero-plastic food service.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/products/areca-leaf-plates",
+  },
+  openGraph: {
+    title: "Round Areca Leaf Plates (8, 10 & 12 Inch) | SYR Global Exports",
+    description:
+      "100% natural, chemical-free Round Areca Leaf Plates in 8, 10, and 12 inch sizes. Direct farmgate sourcing and export packaging.",
+    url: "https://syrglobalexport.com/products/areca-leaf-plates",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "Areca Leaf Plates" }],
+  },
 };
 
 export default function ArecaLeafPlatesPage() {
@@ -17,6 +29,21 @@ export default function ArecaLeafPlatesPage() {
 
   return (
     <main className="w-full bg-slate-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" },
+          { name: "Areca Leaf Plates", url: "/products/areca-leaf-plates" },
+        ]}
+      />
+      <ProductJsonLd
+        name="Round Areca Leaf Plates (8, 10, 12 Inch)"
+        description="100% natural, chemical-free Round Areca Leaf Plates for commercial catering and zero-plastic dining."
+        image={product.image}
+        sku="SYR-ALP-ROUND"
+        url="/products/areca-leaf-plates"
+        category="Biodegradable Tableware"
+      />
       {/* Breadcrumb & Hero */}
       <section className="bg-gradient-to-r from-[#001337] via-[#0F2854] to-[#0A1C3B] text-white py-8 lg:py-12 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

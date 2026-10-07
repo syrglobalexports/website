@@ -4,16 +4,34 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { COMPANY } from "@/data/company";
 import { Certifications } from "@/components/sections/Certifications";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About Us | SYR Global Exports",
+  title: "About Us — Corporate Profile & Sourcing | SYR Global Exports",
   description:
-    "Learn about SYR Global Exports — an Indian export merchant house connecting sustainable agricultural produce and biodegradable tableware with international markets.",
+    "Learn about SYR Global Exports — a Government Registered Indian export merchant house connecting sustainable agricultural produce and biodegradable tableware with international markets.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/about",
+  },
+  openGraph: {
+    title: "About Us — Corporate Profile & Sourcing | SYR Global Exports",
+    description:
+      "Government Registered Indian export merchant house bridging farmgate sourcing and international trade compliance.",
+    url: "https://syrglobalexport.com/about",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "SYR Global Exports About Us" }],
+  },
 };
 
 export default function AboutPage() {
   return (
     <main className="w-full bg-white">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "About Us", url: "/about" },
+        ]}
+      />
       {/* Page Header Banner */}
       <section className="bg-gradient-to-r from-[#001337] via-[#0F2854] to-[#0A1C3B] text-white py-10 lg:py-14 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

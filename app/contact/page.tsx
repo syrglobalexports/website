@@ -3,16 +3,34 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { COMPANY } from "@/data/company";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact & Commercial RFQ | SYR Global Exports",
+  title: "Contact Us & Commercial RFQ | SYR Global Exports",
   description:
-    "Direct export inquiries, overseas distributor partnerships, and compliance verification with SYR Global Exports. Contact our trade desk in Ponneri, Tamil Nadu.",
+    "Direct export inquiries, overseas distributor partnerships, and FOB/CIF proforma requests with SYR Global Exports. Reach our trade desk in Ponneri, Tamil Nadu.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/contact",
+  },
+  openGraph: {
+    title: "Contact Us & Commercial RFQ | SYR Global Exports",
+    description:
+      "Direct export inquiries, bulk container bookings, and compliance verification with SYR Global Exports trade desk.",
+    url: "https://syrglobalexport.com/contact",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "SYR Global Exports Contact" }],
+  },
 };
 
 export default function ContactPage() {
   return (
     <main className="w-full bg-slate-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Contact Us", url: "/contact" },
+        ]}
+      />
       {/* Page Header */}
       <section className="bg-gradient-to-r from-[#001337] via-[#0F2854] to-[#0A1C3B] text-white py-10 lg:py-14 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

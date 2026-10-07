@@ -4,16 +4,34 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { EXPORT_COMPLIANCE_ITEMS, THIRD_PARTY_INSPECTION_NOTE } from "@/data/certifications";
 import { COMPANY } from "@/data/company";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Export & Compliance | SYR Global Exports",
+  title: "Export Compliance & Certifications | SYR Global Exports",
   description:
-    "Export Compliance Assured: IEC, FIEO, GST, UDYAM Registered. Third-party inspection can be facilitated upon buyer request. Learn about our export protocols.",
+    "Export Compliance Assured: IEC, FIEO, GST, UDYAM Registered. Third-party inspection can be facilitated upon buyer request. View our certifications.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/export-compliance",
+  },
+  openGraph: {
+    title: "Export Compliance & Certifications | SYR Global Exports",
+    description:
+      "IEC, FIEO, GST, UDYAM registered merchant exporter. Full pre-shipment documentation and third-party inspection assurance.",
+    url: "https://syrglobalexport.com/export-compliance",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "SYR Global Exports Compliance" }],
+  },
 };
 
 export default function ExportCompliancePage() {
   return (
     <main className="w-full bg-slate-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Export Compliance", url: "/export-compliance" },
+        ]}
+      />
       {/* Page Header */}
       <section className="bg-gradient-to-r from-[#001337] via-[#0F2854] to-[#0A1C3B] text-white py-10 lg:py-14 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,16 +2,34 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Sustainability & Ecological Stewardship | SYR Global Exports",
+  title: "Sustainability & Natural Materials | SYR Global Exports",
   description:
     "Learn about our responsible sourcing, natural biodegradable materials, and commitment to reducing single-use plastic pollution across international supply chains.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/sustainability",
+  },
+  openGraph: {
+    title: "Sustainability & Natural Materials | SYR Global Exports",
+    description:
+      "100% natural fallen palm leaves and upcycled sugarcane bagasse fibers replacing petroleum single-use plastics.",
+    url: "https://syrglobalexport.com/sustainability",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "SYR Global Exports Sustainability" }],
+  },
 };
 
 export default function SustainabilityPage() {
   return (
     <main className="w-full bg-slate-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Sustainability", url: "/sustainability" },
+        ]}
+      />
       {/* Header Banner */}
       <section className="bg-gradient-to-r from-[#001911] via-[#003024] to-[#0F2854] text-white py-10 lg:py-14 border-b border-emerald-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

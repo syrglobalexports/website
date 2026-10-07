@@ -7,9 +7,27 @@ import { Sustainability } from "@/components/sections/Sustainability";
 import { QuoteForm } from "@/components/sections/QuoteForm";
 
 export const metadata: Metadata = {
-  title: "SYR Global Exports | Global Sustainable Products & Export Solutions",
+  title: "SYR Global Exports — Global Sustainable Products & Export Solutions",
   description:
     "Government Registered Indian Export Merchant House supplying 100% natural round Areca leaf plates, fresh G4/Teja green chilli, and biodegradable sugarcane bagasse cutlery to global buyers.",
+  alternates: {
+    canonical: "https://syrglobalexport.com",
+  },
+  openGraph: {
+    title: "SYR Global Exports — Global Sustainable Products & Export Solutions",
+    description:
+      "Government Registered Indian Export Merchant House supplying 100% natural round Areca leaf plates, fresh G4/Teja green chilli, and biodegradable sugarcane bagasse cutlery to global buyers.",
+    url: "https://syrglobalexport.com",
+    siteName: "SYR Global Exports",
+    images: [
+      {
+        url: "/logo.png",
+        width: 600,
+        height: 600,
+        alt: "SYR Global Exports Logo",
+      },
+    ],
+  },
 };
 
 export default function Home() {

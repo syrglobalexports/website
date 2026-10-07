@@ -1,17 +1,35 @@
 import type { Metadata } from "next";
 import { ProductCatalog } from "@/components/sections/ProductCatalog";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
 
 export const metadata: Metadata = {
-  title: "Export Products Catalog | SYR Global Exports",
+  title: "Export Products & Sourcing Catalog | SYR Global Exports",
   description:
-    "Explore our complete product lines: Round Areca Leaf Plates (8\", 10\", 12\"), Fresh Green Chilli (G4/Teja), and Biodegradable Cutlery Set Made from Sugarcane Bagasse.",
+    "Explore verified export lines: 100% natural Round Areca Leaf Plates (8, 10, 12 inch), Sugarcane Bagasse Cutlery, and fresh G4/Teja Green Chilli from India.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/products",
+  },
+  openGraph: {
+    title: "Export Products & Sourcing Catalog | SYR Global Exports",
+    description:
+      "Explore verified export lines: 100% natural Round Areca Leaf Plates, Sugarcane Bagasse Cutlery, and fresh green chilli.",
+    url: "https://syrglobalexport.com/products",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "SYR Global Exports" }],
+  },
 };
 
 export default function ProductsPage() {
   return (
     <main className="w-full bg-slate-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" },
+        ]}
+      />
       {/* Page Hero Header */}
       <section className="bg-gradient-to-r from-[#001337] via-[#0F2854] to-[#0A1C3B] text-white py-10 lg:py-14 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

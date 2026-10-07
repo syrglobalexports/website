@@ -5,11 +5,23 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { PRODUCTS } from "@/data/products";
 import { EnquiryForm } from "@/components/sections/EnquiryForm";
 import { ForwardBookingCTA } from "@/components/sections/ForwardBookingCTA";
+import { BreadcrumbJsonLd, ProductJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Fresh Green Chilli for Global Buyers (G4 & Teja) | SYR Global Exports",
   description:
     "Export grade Indian fresh green chillies (G4 & Teja cultivars). Pre-cooled packhouse sorting, ventilated CFB cartons, and cold-chain reefer transit for buyers worldwide.",
+  alternates: {
+    canonical: "https://syrglobalexport.com/products/green-chilli",
+  },
+  openGraph: {
+    title: "Fresh Green Chilli for Global Buyers (G4 & Teja) | SYR Global Exports",
+    description:
+      "Export grade Indian fresh green chillies (G4 & Teja cultivars). Pre-cooled packhouse sorting and reefer container dispatch.",
+    url: "https://syrglobalexport.com/products/green-chilli",
+    siteName: "SYR Global Exports",
+    images: [{ url: "/logo.png", width: 600, height: 600, alt: "Fresh Green Chilli" }],
+  },
 };
 
 export default function GreenChilliPage() {
@@ -17,6 +29,21 @@ export default function GreenChilliPage() {
 
   return (
     <main className="w-full bg-slate-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" },
+          { name: "Fresh Green Chilli", url: "/products/green-chilli" },
+        ]}
+      />
+      <ProductJsonLd
+        name="Fresh Green Chilli (G4 & Teja)"
+        description="Export grade Indian fresh green chillies sorted in pre-cooled packhouses with cold-chain reefer transit."
+        image={product.image}
+        sku="SYR-CHL-G4TEJA"
+        url="/products/green-chilli"
+        category="Agricultural Produce"
+      />
       {/* Breadcrumb & Hero */}
       <section className="bg-gradient-to-r from-[#001337] via-[#0F2854] to-[#0A1C3B] text-white py-8 lg:py-12 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
